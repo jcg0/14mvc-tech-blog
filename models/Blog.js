@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Blog extends Model {}
@@ -12,7 +11,19 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     blog_content: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    blog_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,5 +32,14 @@ Blog.init(
       allowNull: false,
     },
     
+  },
+  {
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'blog'
   }
 )
+
+module.exports = Blog;

@@ -11,7 +11,8 @@
     "sequelize": "^6.28.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "name": "14mvc-tech-blog",
   "description": "",
