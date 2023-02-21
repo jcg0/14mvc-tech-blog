@@ -1,1 +1,10 @@
-{{!-- {{>signup-form}} --}}
+<div>
+  {{#each blogs as |blog|}}
+  <div>
+    <p>{{blog.blog_title}}</p>
+    <p>{{user.username}}</p>
+    <p>{{blog.creation_date}}</p>
+  </div>
+  <p>{{blog.blog_content}}</p>
+  {{/each}}
+</div>

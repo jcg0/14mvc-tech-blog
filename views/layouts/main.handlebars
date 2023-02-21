@@ -11,15 +11,29 @@
   </head>
 
   <body>
+    <header>
+      {{>navbar}}
+    </header>
     <main>
-      <header>
-        {{>navbar}}
-      </header>
+      <div>
+        {{#each blogs as |blog|}}
+        <div>
+          <p>{{blog.blog_title}}</p>
+          <p>{{user.username}}</p>
+          <p>{{blog.creation_date}}</p>
+        </div>
+        <p>{{blog.blog_content}}</p>
+        {{/each}}
+      </div>
+
       {{{body}}}
     </main>
-    <script src="./js/signup.js"></script>
-    <script src="./js/logout.js"></script>
+
     <script src="./js/login.js"></script>
+    <script src="./js/signup.js"></script>
+    {{#if session.loggedIn}}
+    <script src="./js/logout.js"></script>
+    {{/if}}
   </body>
 
 </html>

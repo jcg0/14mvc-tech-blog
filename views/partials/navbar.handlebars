@@ -1,8 +1,12 @@
 <nav>
   <a href="/">Home</a>
   <a href="/dashboard">Dashboard</a>
+
+  {{#if session.loggedIn}}
+  <a href="/login" id="logout">Logout</a>
+  {{else}}
   <a href="/login">Login</a>
-  <a href="/logout" class=".logout">Logout</a>
+  {{/if}}
 </nav>
 <div class="nav-div">
   <h1>The Tech Blog</h1>

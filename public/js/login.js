@@ -12,7 +12,7 @@ const login= async (e) => {
     });
 
     if(response.ok) {
-      document.location.replace('/home');
+      document.location.replace('/');
     } else {
       alert('failed to log in');
     }
