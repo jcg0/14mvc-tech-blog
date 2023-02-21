@@ -1,1 +1,3 @@
 # mvc-tech-blog
+
+This assignment was very similar to the second project. This was a very complex assignment and I had trouble with many parts of this one. I was able to successfully create the signup/login/logout functiojality and i was able to display all the blogs on the homepage. I was not able to get the blogs for a given user to display when that user was logged in on the dashboard and I wasnt able to create the create post functionality. That is something I hope to come back to in the future when time allows.
