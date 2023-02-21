@@ -35,6 +35,22 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
+});
+
+router.get('dashboard/users/:id', async (req, res) => {
+  try {
+    const userBlogData = await Blog.findAll({
+      where: {user_id: req.params.id},
+      include: { model: User,}
+    });
+
+    if(userBlogData) {
+      const userBlogs = userBlogData.map((blogs) => blogs.get({ plain: true }));
+      res.render('dashboard', { userBlogs });
+    }
+  } catch (err) {
+    res.status(500).json(err)
+  }
 })
 
 module.exports = router;
